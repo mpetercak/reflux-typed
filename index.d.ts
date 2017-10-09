@@ -31,8 +31,9 @@ export interface Actions {
     [index: string]: Listenable;
 }
 
-export class Store implements StoreDefinition {
+export class Store {
   constructor(args: any[]);
+  listenables?: any[] | ActionsDefinition;
   hasListener(listenable: Listenable): boolean;
   listenToMany(listenables: Listenable[]): void;
   validateListening(listenable: Listenable): string;
