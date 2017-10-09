@@ -1,0 +1,26 @@
+{
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Peter Matta",
+      "url": "https://github.com/Pet3rMatta"
+    }
+  ],
+  "dependencies": {},
+  "deprecated": false,
+  "description": "TypeScript definitions for RefluxJS",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "name": "@types/reflux",
+  "peerDependencies": {
+    "react": "@types/react@^15.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "scripts": {},
+  "typeScriptVersion": "2.0",
+  "typesPublisherContentHash": "76aec52663da882109f271932f87b71466b2c16c67057d599c2b55bffc9cd8bd",
+  "version": "0.0.1"
+}
