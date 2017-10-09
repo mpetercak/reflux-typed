@@ -23,18 +23,6 @@ export interface Subscription {
     listenable: Listenable;
 }
 
-export interface Store {
-    hasListener(listenable: Listenable): boolean;
-    listenToMany(listenables: Listenable[]): void;
-    validateListening(listenable: Listenable): string;
-    listenTo(listenable: Listenable, callback: Function, defaultCallback?: Function): Subscription;
-    stopListeningTo(listenable: Listenable): boolean;
-    stopListeningToAll(): void;
-    fetchInitialState(listenable: Listenable, defaultCallback: Function): void;
-    trigger(state: any): void;
-    listen(callback: Function, bindContext: any): Function;
-}
-
 export interface ActionsDefinition {
     [index: string]: any;
 }
