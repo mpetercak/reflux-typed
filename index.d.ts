@@ -33,8 +33,8 @@ export interface Actions {
 
 export class Store<T> {
   constructor(args: any[]);
-  state: T;
   listenables?: any[] | ActionsDefinition;
+  state: T;
   hasListener(listenable: Listenable): boolean;
   listenToMany(listenables: Listenable[]): void;
   validateListening(listenable: Listenable): string;
@@ -47,18 +47,8 @@ export class Store<T> {
   setState(state: any): void;
 }
 
-export class Component extends React.Component {
-  store: Store;
+export class Component<props, state, T> extends React.Component<props, state> {
+  store: new() => Store<T>;
 }
 
-export function createStore(definition: StoreDefinition): Store;
-
-export function createAction(definition?: ActionsDefinition): any;
-
 export function createActions(definitions: ActionsDefinition | string[]): any;
-
-export function connect(store: Store, key?: string): void;
-export function listenTo(store: Store, handler: string): void;
-export function setState(state: any): void;
-
-export function ListenerMixin(): any;
