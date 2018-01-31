@@ -48,7 +48,9 @@ export class Store<T> {
 }
 
 export class Component<props, state, T> extends React.Component<props, state> {
-  store: new() => Store<T>;
+  store: new() => Store<any>;
+  stores: new() => Store<any>[];
+  state: any;
 }
 
 export function createActions(definitions: ActionsDefinition | string[]): any;
