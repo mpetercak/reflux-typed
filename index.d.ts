@@ -50,6 +50,7 @@ export class Store<T> {
 export class Component<props, state, T> extends React.Component<props, state> {
   store: new() => Store<any>;
   stores: new() => Store<any>[];
+  storeKeys: string[];
   state: any;
 }
 
