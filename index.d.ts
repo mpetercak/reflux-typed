@@ -3,35 +3,40 @@ import * as React from 'react';
 export as namespace Reflux;
 
 export interface StoreDefinition {
-    listenables?: any[];
-    init?: Function;
-    getInitialState?: Function;
-    [propertyName: string]: any;
+  listenables?: any[];
+  init?: Function;
+  getInitialState?: Function;
+  [propertyName: string]: any;
 }
 
 export interface ListenFn {
-    (...params: any[]): any;
-    completed: Function;
-    failed: Function;
+  (...params: any[]): any;
+  completed: Function;
+  failed: Function;
 }
 export interface Listenable {
-    listen: ListenFn;
+  listen: ListenFn;
 }
 
 export interface Subscription {
-    stop: Function;
-    listenable: Listenable;
+  stop: Function;
+  listenable: Listenable;
 }
 
 export interface ActionsDefinition {
-    [index: string]: any;
+  [index: string]: any;
 }
 
 export interface Actions {
-    [index: string]: Listenable;
+  [index: string]: Listenable;
+}
+
+export class GlobalState {
+  [store: string]: any
 }
 
 export class Store<T> {
+  static id: string;
   constructor(args: any[]);
   listenables?: any[] | ActionsDefinition;
   state: T;
