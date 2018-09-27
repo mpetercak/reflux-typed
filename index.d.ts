@@ -31,7 +31,10 @@ export interface Actions {
   [index: string]: Listenable;
 }
 
-export class GlobalState {
+export let GlobalState: {
+  initStore(store: any): void;
+  setGlobalState(): void;
+  getGlobalState(): {[store: string]: any};
   [store: string]: any
 }
 
