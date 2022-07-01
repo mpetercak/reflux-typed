@@ -12,9 +12,6 @@
   "license": "MIT",
   "main": "index.d.ts",
   "name": "@types/reflux",
-  "peerDependencies": {
-    "react": "@types/react@^15.0.2"
-  },
   "repository": {
     "type": "git",
     "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
